@@ -18,7 +18,7 @@ class Controller:
         elif com_port.startswith('USB'):
             import hid
             self._device = hid.device()
-            serial_number = com_port.replace('USB','').strip()
+            serial_number = com_port[3:]
             if serial_number:
                 self._device.open(0x0483, 0x5750, serial_number)
             else:
