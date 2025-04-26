@@ -19,7 +19,7 @@ class Controller:
             import hid
             self._device = hid.device()
             print("pre", com_port)
-            serial_number = com_port[3:]
+            serial_number = com_port[3:].strip()
             print("post", serial_number)            
             if serial_number:
                 self._device.open(0x0483, 0x5750, serial_number)
