@@ -21,6 +21,7 @@ class Util:
 
     @staticmethod
     def _position_to_angle(position):
+        position = max(0, min(1000, position))
         if not isinstance(position, int) or position < 0 or position > 1000:
             raise ValueError('Parameter \'position\' must be and int value between 0 and 1000')
 
